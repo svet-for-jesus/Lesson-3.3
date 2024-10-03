@@ -1,6 +1,5 @@
 import pygame
 import random
-from pygame.examples.go_over_there import screen, target_position
 pygame.init()
 
 SCREEN_WIDTH = 800
@@ -12,6 +11,7 @@ icon = pygame.image.load("img/about-us.jpg")
 pygame.display.set_icon(icon)
 
 target_img = pygame.image.load("img/target.png")
+target2_img = pygame.image.load("img/target2_img.png")
 target_width = 80
 target_height = 80
 
@@ -28,7 +28,7 @@ while running:
             running = False
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_x, mouse_y =pygame.mouse.get_pos()
-            if target_x < mouse_x < target_x + target_width and target_y < mouse_y < target_height + target_height:
+            if target_x < mouse_x < target_x + target_width and target_y < mouse_y < target_y + target_height:
                 target_x = random.randint(0, SCREEN_WIDTH - target_width)
                 target_y = random.randint(0, SCREEN_HEIGHT - target_height)
    screen.blit(target_img, (target_x, target_y))
